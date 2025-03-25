@@ -2,23 +2,31 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
-  background-color: black;
+  /* Add the background image with correct syntax */
+  background-image: url("https://thumbs.dreamstime.com/b/hands-computer-desk-using-laptop-rustic-wood-background-cup-tea-book-globe-glasses-53253551.jpg");
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
   margin: 0;
   padding: 20px;
+  min-height: 100vh; /* Ensures the body takes up the full viewport height */
 }
 
 .container {
-  background-color: white;
+  background-color: burlywood; /* Fixed: Use rgba for semi-transparent white */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for contrast */
+  width: 100%;
+  max-width: 400px; /* Limits the width on larger screens */
   margin-top: 10rem;
 }
 
 h1 {
   text-align: center;
   color: #333;
+  font-size: 1.8rem; /* Slightly smaller for better fit on mobile */
 }
 
 .input-section {
@@ -32,6 +40,7 @@ input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 button {
@@ -41,6 +50,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -58,10 +68,28 @@ li {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #eee;
+  font-size: 1rem;
 }
 
 li button {
   background-color: #ff4d4d;
   padding: 5px 10px;
   font-size: 12px;
+}
+
+/* Mobile-First Responsiveness */
+@media (min-width: 768px) {
+  .container {
+    width: 400px; /* Fixed width for larger screens */
+  }
+
+  h1 {
+    font-size: 2rem; /* Larger heading on bigger screens */
+  }
+
+  input,
+  button,
+  li {
+    font-size: 1.1rem; /* Slightly larger text for readability */
+  }
 }
